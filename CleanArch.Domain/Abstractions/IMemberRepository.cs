@@ -4,9 +4,9 @@ namespace CleanArch.Domain.Abstractions;
 
 public interface IMemberRepository
 {
-    Task<IEnumerable<Member>> GetAll();
+    Task<IEnumerable<Member>> GetMembers();
     Task<Member> GetMemberById(int memberId);
     Task<Member> AddMember(Member member);
-    Task<Member> UpdateMember(Member member);
-    Task DeleteMember(int memberId);
+    void UpdateMember(Member member);
+    Task<Member> DeleteMember(int memberId);
 }
