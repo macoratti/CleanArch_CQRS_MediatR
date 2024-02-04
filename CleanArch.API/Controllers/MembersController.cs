@@ -11,6 +11,7 @@ public class MembersController : ControllerBase
 {
     private readonly IMediator _mediator;
     private readonly IUnitOfWork _unitOfWork;
+
     public MembersController(IMediator mediator, IUnitOfWork unitOfWork)
     {
         _mediator = mediator;
@@ -39,6 +40,7 @@ public class MembersController : ControllerBase
 
         return updatedMember != null ? Ok(updatedMember) : NotFound("Member not found.");
     }
+
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteMember(int id)

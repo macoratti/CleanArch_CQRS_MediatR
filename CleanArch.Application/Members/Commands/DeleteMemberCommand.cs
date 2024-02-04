@@ -6,6 +6,7 @@ namespace CleanArch.Application.Members.Commands;
 public sealed class DeleteMemberCommand : IRequest<Member>
 {
     public int Id { get; set; }
+
     public class DeleteMemberCommandHandler : IRequestHandler<DeleteMemberCommand, Member>
     {
         private readonly IUnitOfWork _unitOfWork;
