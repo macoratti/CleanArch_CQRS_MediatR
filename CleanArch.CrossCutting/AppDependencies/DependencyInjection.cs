@@ -1,8 +1,10 @@
-﻿using CleanArch.Application.Members.Commands.Validations;
+﻿using CleanArch.Application.Members.Commands.Notifications;
+using CleanArch.Application.Members.Commands.Validations;
 using CleanArch.Domain.Abstractions;
 using CleanArch.Infrastructure.Context;
 using CleanArch.Infrastructure.Repositories;
 using FluentValidation;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -34,7 +36,7 @@ public static class DependencyInjection
             return connection;
         });
 
-        services.AddScoped<IMemberRepository,MemberRepository>();
+        services.AddScoped<IMemberRepository, MemberRepository>();
         services.AddScoped<IUnitOfWork, UnitOfWork>();
         services.AddScoped<IMemberDapperRepository, MemberDapperRepository>();
 
